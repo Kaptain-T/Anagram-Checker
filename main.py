@@ -33,25 +33,19 @@ def find_anagram():
     firstEntry = firstEntry.upper()
     secondEntry = secondEntry.upper()
 
+    #trying to remove the spaces
+    firstEntry = firstEntry.replace(" ", "")
+    secondEntry = secondEntry.replace(" ", "")
+
+    #converting both inputs to a list
     num1 = list(firstEntry)
     num2 = list(secondEntry)
 
-    #trying to remove the spaces
-    strippedNum1 = []
-    for i in num1:
-        i.strip()
-        strippedNum1.append(i)
-
-    strippedNum2 = []
-    for i in num2:
-        i.strip()
-        strippedNum2.append(i)
-
     #Now for the final check, I will try to sort the list of letters
-    input1 = sorted(strippedNum1)
-    input2 = sorted(strippedNum2)
+    input1 = sorted(num1)
+    input2 = sorted(num2)
     
-    if len(strippedNum1) != len(strippedNum2):
+    if len(num1) != len(num2):
         print ("\n   False")
         again()
     
